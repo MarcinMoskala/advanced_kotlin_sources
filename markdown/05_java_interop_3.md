@@ -149,6 +149,7 @@ public class JavaClass {
 
 
 ```
+//2
 class Pizza(
     val tomatoSauce: Int = 1,
     val cheese: Int = 0,
@@ -169,6 +170,7 @@ class EmailSender {
 
 
 ```
+//3
 class Pizza @JvmOverloads constructor(
     val tomatoSauce: Int = 1,
     val cheese: Int = 0,

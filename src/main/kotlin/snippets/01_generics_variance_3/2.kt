@@ -1,22 +1,11 @@
 package f_01_generics_variance_3.s_2
 
-open class Car
-interface Boat
-class Amphibious : Car(), Boat
-
-class Producer<out T>(val factory: () -> T) {
-    fun produce(): T = factory()
-}
-
-fun main() {
-    val producer: Producer<Amphibious> = Producer { Amphibious() }
-    val amphibious: Amphibious = producer.produce()
-    val boat: Boat = producer.produce()
-    val car: Car = producer.produce()
+class Box<out T> {
+    private var value: T? = null
     
-    val boatProducer: Producer<Boat> = producer
-    val boat1: Boat = boatProducer.produce()
+    private fun set(value: T) { // OK
+        this.value = value
+    }
     
-    val carProducer: Producer<Car> = producer
-    val car2: Car = carProducer.produce()
+    fun get(): T = value ?: error("Value not set")
 }

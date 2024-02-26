@@ -409,6 +409,7 @@ fun main() {
 
 
 ```
+//7
 interface Attack {
     val attack: Int
     val defense: Int

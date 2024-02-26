@@ -67,6 +67,7 @@ class MyActivity : Application() {
 
 
 ```
+//2
 interface KAnnotatedElement {
     val annotations: List<Annotation>
 }
@@ -236,7 +237,7 @@ fun main() {
 
 
 ```
-//2
+//3
 import kotlin.reflect.KCallable
 
 fun add(i: Int, j: Int) = i + j
@@ -250,7 +251,7 @@ fun main() {
 
 
 ```
-//3
+//4
 import kotlin.reflect.KCallable
 
 fun sendEmail(
@@ -343,7 +344,7 @@ fun main() {
 
 
 ```
-//4
+//5
 import kotlin.reflect.*
 import kotlin.reflect.full.memberExtensionProperties
 
@@ -373,7 +374,7 @@ fun main() {
 
 
 ```
-//5
+//6
 import kotlin.reflect.*
 
 class Box(

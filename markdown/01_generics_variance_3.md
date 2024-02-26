@@ -59,6 +59,7 @@ box.set("Some string")
 
 
 ```
+//2
 class Box<out T> {
     private var value: T? = null
     
@@ -85,7 +86,7 @@ val boat: Boat = getAmphibious()
 
 
 ```
-//2
+//3
 open class Car
 interface Boat
 class Amphibious : Car(), Boat
@@ -144,6 +145,7 @@ class Box<in T>(
 
 
 ```
+//4
 class Box<in T>(
     private val value: T
 ) {
@@ -171,6 +173,7 @@ class Box<in T1, out T2> {
 
 
 ```
+//5
 // Declaration-side variance modifier
 class Box<out T>(val value: T)
 
@@ -180,6 +183,7 @@ val boxAny: Box<Any> = boxStr
 
 
 ```
+//6
 class Box<T>(val value: T)
 
 val boxStr: Box<String> = Box("Str")
@@ -189,7 +193,7 @@ val boxAny: Box<out Any> = boxStr
 
 
 ```
-//3
+//7
 interface Dog
 interface Pet
 data class Puppy(val name: String) : Dog, Pet

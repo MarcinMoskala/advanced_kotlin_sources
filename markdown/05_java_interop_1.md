@@ -1,4 +1,5 @@
 ```
+//1
 class MessageSender {
     fun sendMessage(title: String, content: String?) {}
 }
@@ -61,6 +62,7 @@ val user3: Observable<List<User?>?>? = repo.fetchUsers()
 
 
 ```
+//2
 // KotlinFile.kt
 fun multiply(a: Int, b: Int) = a * b
 ```
@@ -88,6 +90,7 @@ public final class JavaClass {
 
 
 ```
+//3
 // KotlinFile.kt
 fun readOnlyList(): List<Int> = listOf(1, 2, 3)
 fun mutableList(): MutableList<Int> = mutableListOf(1, 2, 3)

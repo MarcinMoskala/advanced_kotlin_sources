@@ -1,27 +1,40 @@
 package f_09_reflection_1.s_4
 
-import kotlin.reflect.*
-import kotlin.reflect.full.memberExtensionProperties
+import kotlin.reflect.KCallable
 
-val lock: Any = Any()
-var str: String = "ABC"
-
-class Box(
-    var value: Int = 0
+fun sendEmail(
+    email: String,
+    title: String = "",
+    message: String = ""
 ) {
-    val Int.addedToBox
-        get() = Box(value + this)
+    println(
+        """
+       Sending to $email
+       Title: $title
+       Message: $message
+   """.trimIndent()
+    )
 }
 
 fun main() {
-    val p1: KProperty0<Any> = ::lock
-    println(p1) // val lock: kotlin.Any
-    val p2: KMutableProperty0<String> = ::str
-    println(p2) // var str: kotlin.String
-    val p3: KMutableProperty1<Box, Int> = Box::value
-    println(p3) // var Box.value: kotlin.Int
-    val p4: KProperty2<Box, *, *> = Box::class
-        .memberExtensionProperties
-        .first()
-    println(p4) // val Box.(kotlin.Int.)addedToBox: Box
+    val f: KCallable<Unit> = ::sendEmail
+
+    f.callBy(mapOf(f.parameters[0] to "ABC"))
+    // Sending to ABC
+    // Title:
+    // Message:
+
+    val params = f.parameters.associateBy { it.name }
+    f.callBy(
+        mapOf(
+            params["title"]!! to "DEF",
+            params["message"]!! to "GFI",
+            params["email"]!! to "ABC",
+        )
+    )
+    // Sending to ABC
+    // Title: DEF
+    // Message: GFI
+
+    f.callBy(mapOf()) // throws IllegalArgumentException
 }

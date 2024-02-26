@@ -1,24 +1,22 @@
 package f_01_generics_variance_3.s_3
 
-interface Dog
-interface Pet
-data class Puppy(val name: String) : Dog, Pet
-data class Wolf(val name: String) : Dog
-data class Cat(val name: String) : Pet
+open class Car
+interface Boat
+class Amphibious : Car(), Boat
 
-fun fillWithPuppies(list: MutableList<in Puppy>) {
-    list.add(Puppy("Jim"))
-    list.add(Puppy("Beam"))
+class Producer<out T>(val factory: () -> T) {
+    fun produce(): T = factory()
 }
 
 fun main() {
-    val dogs = mutableListOf<Dog>(Wolf("Pluto"))
-    fillWithPuppies(dogs)
-    println(dogs)
-    // [Wolf(name=Pluto), Puppy(name=Jim), Puppy(name=Beam)]
+    val producer: Producer<Amphibious> = Producer { Amphibious() }
+    val amphibious: Amphibious = producer.produce()
+    val boat: Boat = producer.produce()
+    val car: Car = producer.produce()
     
-    val pets = mutableListOf<Pet>(Cat("Felix"))
-    fillWithPuppies(pets)
-    println(pets)
-    // [Cat(name=Felix), Puppy(name=Jim), Puppy(name=Beam)]
+    val boatProducer: Producer<Boat> = producer
+    val boat1: Boat = boatProducer.produce()
+    
+    val carProducer: Producer<Car> = producer
+    val car2: Car = carProducer.produce()
 }

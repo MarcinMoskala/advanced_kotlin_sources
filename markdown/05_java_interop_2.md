@@ -74,6 +74,7 @@ class User {
 
 
 ```
+//2
 annotation class A
 annotation class B
 annotation class C
@@ -125,6 +126,7 @@ class User(
 
 
 ```
+//3
 annotation class A
 
 class User {
@@ -153,6 +155,7 @@ public final class User {
 
 
 ```
+//4
 annotation class A
 annotation class B
 
@@ -198,7 +201,7 @@ public static final double log(@Positive double $this$log) {
 
 
 ```
-//2
+//5
 import java.math.BigDecimal
 
 class Money(val amount: BigDecimal, val currency: String) {
@@ -264,6 +267,7 @@ public class JavaClass {
 
 
 ```
+//6
 // Kotlin
 class Box {
     var name = ""
@@ -284,6 +288,7 @@ public class JavaClass {
 
 
 ```
+//7
 // Kotlin
 class Box {
     @JvmField
@@ -305,6 +310,7 @@ public class JavaClass {
 
 
 ```
+//8
 // Kotlin
 object Box {
     @JvmField
@@ -325,6 +331,7 @@ public class JavaClass {
 
 
 ```
+//9
 // Kotlin
 class MainWindow {
     // ...
@@ -347,6 +354,7 @@ public class JavaClass {
 
 
 ```
+//10
 class User {
     var name = "ABC"
     var isAdult = true

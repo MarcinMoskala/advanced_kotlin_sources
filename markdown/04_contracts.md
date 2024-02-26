@@ -30,6 +30,7 @@ inline fun contract(builder: ContractBuilder.() -> Unit) {}
 
 
 ```
+//1
 fun mul(x: Int, y: Int): Int {
     require(x > 0)
     require(y > 0)
@@ -50,7 +51,7 @@ public inline fun <R> run(block: () -> R): R {
 
 
 ```
-//1
+//2
 fun main() {
     val i: Int
     i = 42
@@ -60,7 +61,7 @@ fun main() {
 
 
 ```
-//2
+//3
 fun main() {
     val i: Int
     run {
@@ -122,7 +123,7 @@ fun main() {
 
 
 ```
-//3
+//4
 fun main() {
     run {
         println("A")

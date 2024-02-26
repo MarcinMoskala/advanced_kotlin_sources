@@ -162,6 +162,7 @@ fun main() {
 
 
 ```
+//3
 fun printProcessedNumber(transformation: (Int) -> Any) {
     println(transformation(42))
 }

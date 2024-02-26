@@ -1,4 +1,5 @@
 ```
+//1
 fun getTheAnswer(answer: String = "24"): String {
   return answer?.reversed()!!
 }
@@ -23,7 +24,7 @@ plugins {
 
 
 ```
-//1
+//2
 fun main() {
   println(42)
 }
@@ -31,7 +32,7 @@ fun main() {
 
 
 ```
-//2
+//3
 fun main() {
   // Non compliant
   System.out.print("Hello")

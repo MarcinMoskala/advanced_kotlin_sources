@@ -1,10 +1,9 @@
 package f_04_contracts.s_3
 
 fun main() {
+    val i: Int
     run {
-        println("A")
-        return
-        println("B") // unreachable
+        i = 42
     }
-    println("C") // unreachable
+    println(i) // 42
 }

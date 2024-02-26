@@ -156,6 +156,7 @@ fun readFirstLine(fileName: String): String =
 
 
 ```
+//3
 @JvmRecord
 data class Person(val name: String, val age: Int)
 ```

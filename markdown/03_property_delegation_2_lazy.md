@@ -39,6 +39,7 @@ class A {
 
 
 ```
+//1
 class OurLanguageParser {
     val cardRegex by lazy { Regex("...") }
     val questionRegex by lazy { Regex("...") }
@@ -63,6 +64,7 @@ print("5.173.80.254".isValidIpAddress()) // true
 
 
 ```
+//2
 private val IS_VALID_IP_REGEX = 
     ("\\A(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}" +
     "(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\z").toRegex()
@@ -73,6 +75,7 @@ fun String.isValidIpAddress(): Boolean =
 
 
 ```
+//3
 private val IS_VALID_IP_REGEX by lazy {
     ("\\A(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}" +
     "(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\z").toRegex()
@@ -251,7 +254,7 @@ fun Activity.extraString(key: String) =
 
 
 ```
-//1
+//4
 class Lazy {
     var x = 0
     val y by lazy { 1 / x }
