@@ -1,5 +1,3 @@
-package f_09_reflection_2.s_7
-
 package playground
 
 import kotlin.reflect.KFunction

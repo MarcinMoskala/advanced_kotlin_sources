@@ -1,5 +1,3 @@
-package f_09_reflection_2.s_3
-
 package a.b.c
 
 class D {
